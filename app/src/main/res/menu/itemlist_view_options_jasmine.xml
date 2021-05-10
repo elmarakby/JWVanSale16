@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<!--    <group android:id="@+id/operations" android:checkableBehavior="single">-->
+        <item
+            android:id="@+id/create_credit_order"
+            android:title="Create Credit Order"
+            app:showAsAction="always"/>
+
+        <item
+            android:id="@+id/create_cash_order"
+            android:title="Create Cash Order"
+            app:showAsAction="always"/>
+
+        <item
+            android:id="@+id/create_pre_sold_order"
+            android:title="Create Pre-Sold Order"
+            app:showAsAction="always"/>
+
+        <item
+            android:id="@+id/create_return_order"
+            android:title="Create Return Order"
+            app:showAsAction="always"/>
+
+        <item
+            android:id="@+id/create_collection"
+            android:title="Create Collection"
+            app:showAsAction="always"/>
+
+<!--    </group>-->
+<!--    <item-->
+<!--        android:id="@+id/update_item"-->
+<!--        android:icon="@drawable/ic_edit_white_24dp"-->
+<!--        android:title="@string/update"-->
+<!--        app:showAsAction="always" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/delete_item"-->
+<!--        android:icon="@drawable/ic_delete_white_24dp"-->
+<!--        android:title="@string/delete"-->
+<!--        app:showAsAction="always" />-->
+
+</menu>

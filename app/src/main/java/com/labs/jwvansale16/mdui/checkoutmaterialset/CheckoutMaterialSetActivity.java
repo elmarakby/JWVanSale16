@@ -18,6 +18,7 @@ import android.view.ContextThemeWrapper;
 import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
 import com.labs.jwvansale16.R;
+import com.labs.jwvansale16.mdui.JasmineMainActivity;
 import com.sap.cloud.mobile.flowv2.core.DialogHelper;
 import com.labs.jwvansale16.mdui.BundleKeys;
 import com.labs.jwvansale16.mdui.EntitySetListActivity;
@@ -75,6 +76,7 @@ public class CheckoutMaterialSetActivity extends AppCompatActivity implements In
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //toolbar.setTitle("Check-Out Materials");
     }
 
     /** Let the Navigate Up button work like Back button */
@@ -139,7 +141,8 @@ public class CheckoutMaterialSetActivity extends AppCompatActivity implements In
             case UIConstants.EVENT_BACK_NAVIGATION_CONFIRMED:
                 isNavigationDisabled = false;
                 if(isConfirmDataLossFromHomeButton) {
-                    Intent intent = new Intent(this, EntitySetListActivity.class);
+//                    Intent intent = new Intent(this, EntitySetListActivity.class);
+                    Intent intent = new Intent(this, JasmineMainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {

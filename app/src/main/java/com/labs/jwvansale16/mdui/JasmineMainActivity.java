@@ -146,6 +146,8 @@ public class JasmineMainActivity extends AppCompatActivity {
 
         txtVechile = findViewById(R.id.txtVechile);
 
+        progressBar = findViewById(R.id.sync_indeterminate_js);
+
     }
 
     private void prepareDriverDetailViewModel() {
@@ -345,34 +347,7 @@ public class JasmineMainActivity extends AppCompatActivity {
 
     public void btnSyncClick(View view) {
         //Toast.makeText(this, "Not Implmented", Toast.LENGTH_LONG).show();
-        OfflineWorkerUtil.sync(getApplicationContext());
-        progressBar.setVisibility(View.VISIBLE);
-        OfflineWorkerUtil.addProgressListener(progressListener);
-        WorkManager.getInstance(getApplicationContext())
-                .getWorkInfosByTagLiveData(OfflineWorkerUtil.OFFLINE_WORKER_SYNC_TAG)
-                .observe(this, workInfos -> {
-                    for(WorkInfo workInfo : workInfos) {
-                        if(workInfo.getState().isFinished()) {
-                            if (syncItem != null) {
-                                syncItem.setEnabled(true);
-                            }
-                            OfflineWorkerUtil.removeProgressListener(progressListener);
-                            progressBar.setVisibility(View.INVISIBLE);
-                            switch (workInfo.getState()) {
-                                case SUCCEEDED:
-                                    LOGGER.info("Offline sync done.");
-                                    break;
-                                case FAILED:
-                                    new DialogHelper(getApplication(), R.style.OnboardingDefaultTheme_Dialog_Alert).showOKOnlyDialog(
-                                            getSupportFragmentManager(),
-                                            (workInfo.getOutputData().getString(OfflineWorkerUtil.OUTPUT_ERROR_DETAIL) == null)? getString(R.string.synchronize_failure_detail) : workInfo.getOutputData().getString(OfflineWorkerUtil.OUTPUT_ERROR_DETAIL),
-                                            null, null, null
-                                    );
-                                    break;
-                            }
-                        }
-                    }
-                });
+        synchronize();
 
 
 

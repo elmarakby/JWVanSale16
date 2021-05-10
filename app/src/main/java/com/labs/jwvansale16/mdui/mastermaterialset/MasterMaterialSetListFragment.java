@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.annotation.WorkerThread;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DiffUtil;
@@ -111,11 +113,16 @@ public class MasterMaterialSetListFragment extends InterfacedFragment<MasterMate
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
-        currentActivity.setTitle(activityTitle);
+        currentActivity.setTitle("Material Master");
         RecyclerView recyclerView = currentActivity.findViewById(R.id.item_list);
         if (recyclerView == null) throw new AssertionError();
         this.adapter = new MasterMaterialListAdapter(currentActivity);
         recyclerView.setAdapter(adapter);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(currentActivity);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), linearLayoutManager.getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         setupRefreshLayout();
         refreshLayout.setRefreshing(true);
@@ -124,15 +131,18 @@ public class MasterMaterialSetListFragment extends InterfacedFragment<MasterMate
         parentEntityData = currentActivity.getIntent().getParcelableExtra("parent");
 
         FloatingActionButton floatButton = currentActivity.findViewById(R.id.fab);
-        if (floatButton != null) {
-            if (navigationPropertyName != null && parentEntityData != null) {
-                floatButton.hide();
-            } else {
-                floatButton.setOnClickListener((v) -> {
-                    listener.onFragmentStateChange(UIConstants.EVENT_CREATE_NEW_ITEM, null);
-                });
-            }
-        }
+//        if (floatButton != null) {
+//            if (navigationPropertyName != null && parentEntityData != null) {
+//                floatButton.hide();
+//            } else {
+//                floatButton.setOnClickListener((v) -> {
+//                    listener.onFragmentStateChange(UIConstants.EVENT_CREATE_NEW_ITEM, null);
+//                });
+//            }
+//        }
+
+        if (floatButton != null)
+            floatButton.hide();
 
         prepareViewModel();
     }
@@ -635,31 +645,31 @@ public class MasterMaterialSetListFragment extends InterfacedFragment<MasterMate
 
         private void populateObjectCell(@NonNull ViewHolder viewHolder, @NonNull MasterMaterial masterMaterialEntity) {
 
-            DataValue dataValue = masterMaterialEntity.getDataValue(MasterMaterial.material);
+            DataValue dataValue = masterMaterialEntity.getDataValue(MasterMaterial.materialdesc);
             String masterPropertyValue = null;
             if (dataValue != null) {
                 masterPropertyValue = dataValue.toString();
             }
             viewHolder.objectCell.setHeadline(masterPropertyValue);
-            viewHolder.objectCell.setDetailImage(null);
+            viewHolder.objectCell.setDetailImage(R.mipmap.jw_logo);
             setDetailImage(viewHolder, masterMaterialEntity);
 
-            viewHolder.objectCell.setSubheadline("Subheadline goes here");
-            viewHolder.objectCell.setFootnote("Footnote goes here");
-            if (masterMaterialEntity.getInErrorState()) {
-                viewHolder.objectCell.setIcon(R.drawable.ic_error_state, 0, R.string.error_state);
-            }
-            else if (masterMaterialEntity.isUpdated()) {
-                viewHolder.objectCell.setIcon(R.drawable.ic_updated_state, 0, R.string.updated_state);
-            }
-            else if (masterMaterialEntity.isLocal()) {
-                viewHolder.objectCell.setIcon(R.drawable.ic_local_state, 0, R.string.local_state);
-            }
-            else {
-                viewHolder.objectCell.setIcon(R.drawable.ic_download_state, 0, R.string.download_state);
-            }
-            viewHolder.objectCell.setIcon(R.drawable.default_dot, 1, R.string.attachment_item_content_desc);
-            viewHolder.objectCell.setIcon("!", 2);
+            viewHolder.objectCell.setSubheadline(masterMaterialEntity.getMaterial());
+            viewHolder.objectCell.setFootnote(masterMaterialEntity.getUom());
+//            if (masterMaterialEntity.getInErrorState()) {
+//                viewHolder.objectCell.setIcon(R.drawable.ic_error_state, 0, R.string.error_state);
+//            }
+//            else if (masterMaterialEntity.isUpdated()) {
+//                viewHolder.objectCell.setIcon(R.drawable.ic_updated_state, 0, R.string.updated_state);
+//            }
+//            else if (masterMaterialEntity.isLocal()) {
+//                viewHolder.objectCell.setIcon(R.drawable.ic_local_state, 0, R.string.local_state);
+//            }
+//            else {
+//                viewHolder.objectCell.setIcon(R.drawable.ic_download_state, 0, R.string.download_state);
+//            }
+//            viewHolder.objectCell.setIcon(R.drawable.default_dot, 1, R.string.attachment_item_content_desc);
+//            viewHolder.objectCell.setIcon("!", 2);
         }
 
         /**

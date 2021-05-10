@@ -3,18 +3,25 @@ package com.labs.jwvansale16.mdui.customervisitplanset;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
+
 import android.content.Context;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.WorkerThread;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.appcompat.view.ActionMode;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,6 +31,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import com.labs.jwvansale16.R;
 import com.labs.jwvansale16.mdui.BundleKeys;
 import com.labs.jwvansale16.mdui.EntitySetListActivity;
@@ -86,7 +94,7 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
         activityTitle = getString(EntitySetListActivity.EntitySetName.CustomerVisitPlanSet.getTitleId());
         menu = R.menu.itemlist_menu;
         setHasOptionsMenu(true);
-        if( savedInstanceState != null ) {
+        if (savedInstanceState != null) {
             isInActionMode = savedInstanceState.getBoolean("ActionMode");
         }
 
@@ -97,7 +105,7 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View objectHeader = currentActivity.findViewById(R.id.objectHeader);
-        if( objectHeader != null) {
+        if (objectHeader != null) {
             objectHeader.setVisibility(View.GONE);
         }
         return inflater.inflate(R.layout.fragment_entityitem_list, container, false);
@@ -111,11 +119,16 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
-        currentActivity.setTitle(activityTitle);
+        currentActivity.setTitle("Customers");
         RecyclerView recyclerView = currentActivity.findViewById(R.id.item_list);
         if (recyclerView == null) throw new AssertionError();
         this.adapter = new CustomerVisitPlanListAdapter(currentActivity);
         recyclerView.setAdapter(adapter);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(currentActivity);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), linearLayoutManager.getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         setupRefreshLayout();
         refreshLayout.setRefreshing(true);
@@ -124,15 +137,17 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
         parentEntityData = currentActivity.getIntent().getParcelableExtra("parent");
 
         FloatingActionButton floatButton = currentActivity.findViewById(R.id.fab);
-        if (floatButton != null) {
-            if (navigationPropertyName != null && parentEntityData != null) {
-                floatButton.hide();
-            } else {
-                floatButton.setOnClickListener((v) -> {
-                    listener.onFragmentStateChange(UIConstants.EVENT_CREATE_NEW_ITEM, null);
-                });
-            }
-        }
+//        if (floatButton != null) {
+//            if (navigationPropertyName != null && parentEntityData != null) {
+//                floatButton.hide();
+//            } else {
+//                floatButton.setOnClickListener((v) -> {
+//                    listener.onFragmentStateChange(UIConstants.EVENT_CREATE_NEW_ITEM, null);
+//                });
+//            }
+//        }
+        if (floatButton != null)
+            floatButton.hide();
 
         prepareViewModel();
     }
@@ -149,11 +164,13 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
         refreshListData();
     }
 
-    /** Initializes the view model and add observers on it */
+    /**
+     * Initializes the view model and add observers on it
+     */
     private void prepareViewModel() {
-        if( navigationPropertyName != null && parentEntityData != null ) {
+        if (navigationPropertyName != null && parentEntityData != null) {
             viewModel = new ViewModelProvider(currentActivity, new EntityViewModelFactory(currentActivity.getApplication(), navigationPropertyName, parentEntityData))
-                .get(CustomerVisitPlanViewModel.class);
+                    .get(CustomerVisitPlanViewModel.class);
         } else {
             viewModel = new ViewModelProvider(currentActivity).get(CustomerVisitPlanViewModel.class);
             viewModel.initialRead(this::showError);
@@ -195,12 +212,14 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
         });
     }
 
-    /** Searches 'item' in the refreshed list, if found, returns the one in list */
+    /**
+     * Searches 'item' in the refreshed list, if found, returns the one in list
+     */
     private CustomerVisitPlan containsItem(List<CustomerVisitPlan> items, CustomerVisitPlan item) {
         CustomerVisitPlan found = null;
-        if( item != null ) {
-            for( CustomerVisitPlan entity: items ) {
-                if( adapter.getItemIdForCustomerVisitPlan(entity) == adapter.getItemIdForCustomerVisitPlan(item)) {
+        if (item != null) {
+            for (CustomerVisitPlan entity : items) {
+                if (adapter.getItemIdForCustomerVisitPlan(entity) == adapter.getItemIdForCustomerVisitPlan(item)) {
                     found = entity;
                     break;
                 }
@@ -214,23 +233,25 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
      */
     private void hideDetailFragment() {
         Fragment detailFragment = currentActivity.getSupportFragmentManager().findFragmentByTag(UIConstants.DETAIL_FRAGMENT_TAG);
-        if( detailFragment != null ) {
+        if (detailFragment != null) {
             currentActivity.getSupportFragmentManager().beginTransaction()
-                .remove(detailFragment).commit();
+                    .remove(detailFragment).commit();
         }
-        if( secondaryToolbar != null ) {
+        if (secondaryToolbar != null) {
             secondaryToolbar.getMenu().clear();
             secondaryToolbar.setTitle("");
         }
         View objectHeader = currentActivity.findViewById(R.id.objectHeader);
-        if( objectHeader != null) {
+        if (objectHeader != null) {
             objectHeader.setVisibility(View.GONE);
         }
     }
 
-    /** Callback function for delete operation */
+    /**
+     * Callback function for delete operation
+     */
     private void onDeleteComplete(@NonNull OperationResult<CustomerVisitPlan> result) {
-        if( progressBar != null ) {
+        if (progressBar != null) {
             progressBar.setVisibility(View.INVISIBLE);
         }
         viewModel.removeAllSelected();
@@ -246,7 +267,9 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
         }
     }
 
-    /** Refreshes the list data */
+    /**
+     * Refreshes the list data
+     */
     void refreshListData() {
         if (navigationPropertyName != null && parentEntityData != null) {
             viewModel.refresh((EntityValue) parentEntityData, navigationPropertyName);
@@ -256,7 +279,9 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
         adapter.notifyDataSetChanged();
     }
 
-    /** Sets the selected item id into view model */
+    /**
+     * Sets the selected item id into view model
+     */
     private CustomerVisitPlan setItemIdSelected(int itemId) {
         LiveData<List<CustomerVisitPlan>> liveData = viewModel.getObservableItems();
         List<CustomerVisitPlan> customerVisitPlanSet = liveData.getValue();
@@ -267,7 +292,9 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
         return null;
     }
 
-    /** Sets up the refresh layout */
+    /**
+     * Sets up the refresh layout
+     */
     private void setupRefreshLayout() {
         refreshLayout = currentActivity.findViewById(R.id.swiperefresh);
         refreshLayout.setColorSchemeColors(UIConstants.FIORI_STANDARD_THEME_GLOBAL_DARK_BASE);
@@ -275,7 +302,9 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
         refreshLayout.setOnRefreshListener(this::refreshListData);
     }
 
-    /** Callback function to handle deletion error */
+    /**
+     * Callback function to handle deletion error
+     */
     private void handleDeleteError() {
         showError(getResources().getString(R.string.delete_failed_detail));
         refreshLayout.setRefreshing(false);
@@ -312,7 +341,7 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
                         isInActionMode = false;
                         actionMode.finish();
                         viewModel.setSelectedEntity(customerVisitPlanEntity);
-                        if( currentActivity.getResources().getBoolean(R.bool.two_pane)) {
+                        if (currentActivity.getResources().getBoolean(R.bool.two_pane)) {
                             listener.onFragmentStateChange(UIConstants.EVENT_ITEM_CLICKED, customerVisitPlanEntity);
                         }
                         listener.onFragmentStateChange(UIConstants.EVENT_EDIT_ITEM, customerVisitPlanEntity);
@@ -348,13 +377,19 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
 
         private Context context;
 
-        /** Entire list of CustomerVisitPlan collection */
+        /**
+         * Entire list of CustomerVisitPlan collection
+         */
         private List<CustomerVisitPlan> customerVisitPlanSet;
 
-        /** RecyclerView this adapter is associate with */
+        /**
+         * RecyclerView this adapter is associate with
+         */
         private RecyclerView recyclerView;
 
-        /** Flag to indicate whether we have checked retained selected customerVisitPlanSet */
+        /**
+         * Flag to indicate whether we have checked retained selected customerVisitPlanSet
+         */
         private boolean checkForSelectedOnCreate = false;
 
         public CustomerVisitPlanListAdapter(Context context) {
@@ -504,7 +539,7 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
         private void setOnClickListener(@NonNull ViewHolder holder, @NonNull CustomerVisitPlan customerVisitPlanEntity) {
             holder.view.setOnClickListener(view -> {
                 boolean isNavigationDisabled = ((CustomerVisitPlanSetActivity) currentActivity).isNavigationDisabled;
-                if(isNavigationDisabled) {
+                if (isNavigationDisabled) {
                     Toast.makeText(currentActivity, "Please save your changes first...", Toast.LENGTH_LONG).show();
                 } else {
                     resetSelected();
@@ -537,10 +572,12 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
                 return onAnyKindOfClick();
             }
 
-            /** callback function for both normal and long click on an entity */
+            /**
+             * callback function for both normal and long click on an entity
+             */
             private boolean onAnyKindOfClick() {
                 boolean isNavigationDisabled = ((CustomerVisitPlanSetActivity) currentActivity).isNavigationDisabled;
-                if( isNavigationDisabled ) {
+                if (isNavigationDisabled) {
                     Toast.makeText(currentActivity, "Please save your changes first...", Toast.LENGTH_LONG).show();
                 } else {
                     if (!isInActionMode) {
@@ -553,7 +590,9 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
             }
         }
 
-        /** sets the detail image to the given <code>viewHolder</code> */
+        /**
+         * sets the detail image to the given <code>viewHolder</code>
+         */
         private void setDetailImage(@NonNull ViewHolder viewHolder, @NonNull CustomerVisitPlan customerVisitPlanEntity) {
             if (isInActionMode) {
                 int drawable;
@@ -635,31 +674,28 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
 
         private void populateObjectCell(@NonNull ViewHolder viewHolder, @NonNull CustomerVisitPlan customerVisitPlanEntity) {
 
-            DataValue dataValue = customerVisitPlanEntity.getDataValue(CustomerVisitPlan.userid);
+            DataValue dataValue = customerVisitPlanEntity.getDataValue(CustomerVisitPlan.customername);
             String masterPropertyValue = null;
             if (dataValue != null) {
                 masterPropertyValue = dataValue.toString();
             }
             viewHolder.objectCell.setHeadline(masterPropertyValue);
-            viewHolder.objectCell.setDetailImage(null);
+            viewHolder.objectCell.setDetailImage(R.mipmap.jw_logo);
             setDetailImage(viewHolder, customerVisitPlanEntity);
 
-            viewHolder.objectCell.setSubheadline("Subheadline goes here");
-            viewHolder.objectCell.setFootnote("Footnote goes here");
-            if (customerVisitPlanEntity.getInErrorState()) {
-                viewHolder.objectCell.setIcon(R.drawable.ic_error_state, 0, R.string.error_state);
-            }
-            else if (customerVisitPlanEntity.isUpdated()) {
-                viewHolder.objectCell.setIcon(R.drawable.ic_updated_state, 0, R.string.updated_state);
-            }
-            else if (customerVisitPlanEntity.isLocal()) {
-                viewHolder.objectCell.setIcon(R.drawable.ic_local_state, 0, R.string.local_state);
-            }
-            else {
-                viewHolder.objectCell.setIcon(R.drawable.ic_download_state, 0, R.string.download_state);
-            }
-            viewHolder.objectCell.setIcon(R.drawable.default_dot, 1, R.string.attachment_item_content_desc);
-            viewHolder.objectCell.setIcon("!", 2);
+            viewHolder.objectCell.setSubheadline(customerVisitPlanEntity.getCustomerno());
+            viewHolder.objectCell.setFootnote(customerVisitPlanEntity.getStreet());
+//            if (customerVisitPlanEntity.getInErrorState()) {
+//                viewHolder.objectCell.setIcon(R.drawable.ic_error_state, 0, R.string.error_state);
+//            } else if (customerVisitPlanEntity.isUpdated()) {
+//                viewHolder.objectCell.setIcon(R.drawable.ic_updated_state, 0, R.string.updated_state);
+//            } else if (customerVisitPlanEntity.isLocal()) {
+//                viewHolder.objectCell.setIcon(R.drawable.ic_local_state, 0, R.string.local_state);
+//            } else {
+//                viewHolder.objectCell.setIcon(R.drawable.ic_download_state, 0, R.string.download_state);
+//            }
+//            viewHolder.objectCell.setIcon(R.drawable.default_dot, 1, R.string.attachment_item_content_desc);
+//            viewHolder.objectCell.setIcon("!", 2);
         }
 
         /**
@@ -668,7 +704,7 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
          *
          * @param view
          * @param isCustomerVisitPlanSelected - true if customerVisitPlanEntity is selected via long press action
-         * @param isActive               - true if customerVisitPlanEntity is selected via click action
+         * @param isActive                    - true if customerVisitPlanEntity is selected via click action
          */
         private void setViewBackground(@NonNull View view, boolean isCustomerVisitPlanSelected, boolean isActive) {
             boolean isMasterDetailView = currentActivity.getResources().getBoolean(R.bool.two_pane);
@@ -697,7 +733,7 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
          * @return an ID based on the primary key of CustomerVisitPlan
          */
         private long getItemIdForCustomerVisitPlan(CustomerVisitPlan customerVisitPlanEntity) {
-            if(customerVisitPlanEntity.getReadLink() == null) return 0L;
+            if (customerVisitPlanEntity.getReadLink() == null) return 0L;
             else return customerVisitPlanEntity.getReadLink().hashCode();
         }
 
@@ -713,10 +749,14 @@ public class CustomerVisitPlanSetListFragment extends InterfacedFragment<Custome
 
             public String masterPropertyValue;
 
-            /** Fiori ObjectCell to display customerVisitPlanEntity in list */
+            /**
+             * Fiori ObjectCell to display customerVisitPlanEntity in list
+             */
             public final ObjectCell objectCell;
 
-            /** Checkbox for long press selection */
+            /**
+             * Checkbox for long press selection
+             */
             public final CheckBox checkBox;
 
             public ViewHolder(View view) {

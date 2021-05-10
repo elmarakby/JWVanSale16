@@ -18,6 +18,7 @@ import android.view.ContextThemeWrapper;
 import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
 import com.labs.jwvansale16.R;
+import com.labs.jwvansale16.mdui.JasmineMainActivity;
 import com.sap.cloud.mobile.flowv2.core.DialogHelper;
 import com.labs.jwvansale16.mdui.BundleKeys;
 import com.labs.jwvansale16.mdui.EntitySetListActivity;
@@ -122,24 +123,25 @@ public class CustomerVisitPlanSetActivity extends AppCompatActivity implements I
     public void onFragmentStateChange(int eventId, @Nullable CustomerVisitPlan entity) {
         switch (eventId) {
             case UIConstants.EVENT_CREATE_NEW_ITEM:
-                onCreateNewItem();
+                //onCreateNewItem();
                 break;
             case UIConstants.EVENT_ITEM_CLICKED:
                 onItemClicked(entity);
                 break;
             case UIConstants.EVENT_DELETION_COMPLETED:
-                onDeleteComplete();
+                //onDeleteComplete();
                 break;
             case UIConstants.EVENT_EDIT_ITEM:
-                onEditItem(entity);
+                //onEditItem(entity);
                 break;
             case UIConstants.EVENT_ASK_DELETE_CONFIRMATION:
-                onConfirmDelete();
+                //onConfirmDelete();
                 break;
             case UIConstants.EVENT_BACK_NAVIGATION_CONFIRMED:
                 isNavigationDisabled = false;
                 if(isConfirmDataLossFromHomeButton) {
-                    Intent intent = new Intent(this, EntitySetListActivity.class);
+                    //Intent intent = new Intent(this, EntitySetListActivity.class);
+                    Intent intent = new Intent(this, JasmineMainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {

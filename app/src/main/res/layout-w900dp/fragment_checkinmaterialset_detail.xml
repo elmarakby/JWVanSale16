@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".mdui.checkinmaterialset.CheckInMaterialSetActivity">
+    <data>
+        <import type = "com.sap.cloud.android.odata.zgw_vansale_srv_entities.CheckInMaterial" />
+        <variable name="checkInMaterial" type="CheckInMaterial"/>
+        <variable name="handler" type="com.labs.jwvansale16.mdui.checkinmaterialset.CheckInMaterialSetDetailFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Driverid"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.driverid).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Material"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.material).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Insertdate"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.insertdate).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Descision"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.descision).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Materialtext"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.materialtext).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Ean11"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.ean11).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Batch"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.batch).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Plant"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.plant).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Qty"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.qty).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Uom"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.uom).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Salesoffice"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.salesoffice).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Salesorg"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.salesorg).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Distchannel"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.distchannel).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Division"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.division).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Action"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.action).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.fvar).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar2"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.fvar2).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar3"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.fvar3).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar4"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.fvar4).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar5"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.fvar5).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar6"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.fvar6).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar7"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.fvar7).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar8"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.fvar8).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar9"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.fvar9).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar10"
+            app:valueText="@{checkInMaterial.getOptionalValue(CheckInMaterial.fvar10).toString()}" />
+
+    </LinearLayout>
+</layout>

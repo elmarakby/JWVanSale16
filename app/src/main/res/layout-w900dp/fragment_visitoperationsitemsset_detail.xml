@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".mdui.visitoperationsitemsset.VisitOperationsItemsSetActivity">
+    <data>
+        <import type = "com.sap.cloud.android.odata.zgw_vansale_srv_entities.VisitOperationsItems" />
+        <variable name="visitOperationsItems" type="VisitOperationsItems"/>
+        <variable name="handler" type="com.labs.jwvansale16.mdui.visitoperationsitemsset.VisitOperationsItemsSetDetailFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Visitid"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.visitid).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Exdocument"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.exdocument).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Itemnumber"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.itemnumber).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Material"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.material).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Batch"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.batch).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Salesoffice"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.salesoffice).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Mainqty"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.mainqty).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Mainuom"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.mainuom).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Freeqty"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.freeqty).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Freeuom"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.freeuom).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Price"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.price).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Discount"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.discount).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Totalprice"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.totalprice).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Currency"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.currency).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.fvar).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar2"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.fvar2).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar3"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.fvar3).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar4"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.fvar4).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar5"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.fvar5).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar6"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.fvar6).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar7"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.fvar7).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar8"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.fvar8).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar9"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.fvar9).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar10"
+            app:valueText="@{visitOperationsItems.getOptionalValue(VisitOperationsItems.fvar10).toString()}" />
+
+    </LinearLayout>
+</layout>

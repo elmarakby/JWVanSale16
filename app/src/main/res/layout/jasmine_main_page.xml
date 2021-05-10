@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mdui.JasmineMainActivity">>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:titleTextColor="@color/colorWhite" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--    <FrameLayout-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/app_bar">
+            <!--        app:layout_constraintTop_toTopOf="@+id/toolbar"-->
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtDriverID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Driver ID" />
+
+                <TextView
+                    android:id="@+id/txtDriverName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Driver Name" />
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Date" />
+
+                <TextView
+                    android:id="@+id/txtSupervisor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Supervisor" />
+
+                <TextView
+                    android:id="@+id/txtSalesLimit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Sales Limit" />
+
+                <TextView
+                    android:id="@+id/txtVatRegNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="VAT Reg. No." />
+
+                <TextView
+                    android:id="@+id/txtTourID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Tour ID" />
+
+                <TextView
+                    android:id="@+id/txtRoute"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Route" />
+
+                <TextView
+                    android:id="@+id/txtVechile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Vechile" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <Button
+                            android:id="@+id/imgBtnCheckOutStock"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnMaterialsClick"
+                            android:padding="20dp"
+                            android:text="Checkout Stock"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
+
+                        <Button
+                            android:id="@+id/btnCheckInStock"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnReportsClick"
+                            android:padding="20dp"
+                            android:text="Checkin Stock"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <Button
+                            android:id="@+id/imgBtnSync"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnSyncClick"
+                            android:padding="20dp"
+                            android:text="Sync"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
+
+                        <Button
+                            android:id="@+id/btnConfirm"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnReportsClick"
+                            android:padding="20dp"
+                            android:text="Confirm"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <Button
+                            android:id="@+id/imgBtnReset"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnResetClick"
+                            android:padding="20dp"
+                            android:text="Reset"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
+
+                        <Button
+                            android:id="@+id/btnLimitException"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnReportsClick"
+                            android:padding="20dp"
+                            android:text="Limit Exception"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
+
+
+                    </TableRow>
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <Button
+                            android:id="@+id/imgBtnVisitList"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnVisitListClick"
+                            android:padding="5dp"
+                            android:text="My Visit List"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp"
+
+
+                            />
+                    </TableRow>
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <Button
+                            android:id="@+id/imgBtnReloadStatus"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnReloadStatusClick"
+                            android:padding="20dp"
+                            android:text="Reload Status"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
+
+                        <Button
+                            android:id="@+id/btnMasterData"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnMasterDataClick"
+                            android:padding="20dp"
+                            android:text="Master Data"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <Button
+                            android:id="@+id/imgBtnPreSalesDeliv"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnPreSalesDeliveryClick"
+                            android:padding="20dp"
+                            android:text="Pre-Sales Delivery"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
+
+                        <Button
+                            android:id="@+id/btnCollection"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnReportsClick"
+                            android:padding="20dp"
+                            android:text="Collection"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <Button
+                            android:id="@+id/imgBtnLoadRequest"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnLoadRequestClick"
+                            android:padding="20dp"
+                            android:text="Load Request"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
+
+                        <Button
+                            android:id="@+id/btnReloadRequest"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnReportsClick"
+                            android:padding="20dp"
+                            android:text="Reload Request"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
+
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <Button
+                            android:id="@+id/imgBtnEndUpload"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="20dp"
+                            android:layout_weight="1"
+                            android:background="@color/activ_item"
+                            android:gravity="center"
+                            android:onClick="btnEndUploadClick"
+                            android:padding="5dp"
+                            android:text="End and Upload"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorNavigationBarTint"
+                            android:textSize="14dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp"
+
+
+                            />
+                    </TableRow>
+                </TableLayout>
+
+                <com.sap.cloud.mobile.fiori.indicator.FioriProgressBar
+                    android:id="@+id/sync_indeterminate_js"
+                    style="@style/FioriProgressbar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|top"
+                    android:layout_marginBottom="72dp"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".mdui.totalmaterialset.TotalMaterialSetActivity">
+    <data>
+        <import type = "com.sap.cloud.android.odata.zgw_vansale_srv_entities.TotalMaterial" />
+        <variable name="totalMaterial" type="TotalMaterial"/>
+        <variable name="handler" type="com.labs.jwvansale16.mdui.totalmaterialset.TotalMaterialSetDetailFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Userid"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.userid).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Driver"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.driver).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Material"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.material).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Materialtext"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.materialtext).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Ean11"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.ean11).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Qty"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.qty).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Uom"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.uom).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.fvar).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar2"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.fvar2).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar3"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.fvar3).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar4"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.fvar4).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar5"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.fvar5).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar6"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.fvar6).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar7"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.fvar7).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar8"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.fvar8).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar9"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.fvar9).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar10"
+            app:valueText="@{totalMaterial.getOptionalValue(TotalMaterial.fvar10).toString()}" />
+
+    </LinearLayout>
+</layout>

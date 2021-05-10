@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".mdui.customervisitplanset.CustomerVisitPlanSetActivity">
+    <data>
+        <import type = "com.sap.cloud.android.odata.zgw_vansale_srv_entities.CustomerVisitPlan" />
+        <variable name="customerVisitPlan" type="CustomerVisitPlan"/>
+        <variable name="handler" type="com.labs.jwvansale16.mdui.customervisitplanset.CustomerVisitPlanSetDetailFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Userid"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.userid).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Driverid"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.driverid).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Customerno"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.customerno).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Customername"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.customername).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Countrycode"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.countrycode).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Street"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.street).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="City"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.city).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Salesorg"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.salesorg).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Distchannel"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.distchannel).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Division"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.division).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Customergroup"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.customergroup).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Salesoffice"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.salesoffice).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Salesofficedesc"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.salesofficedesc).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Salesofficeaddress"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.salesofficeaddress).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Billtonumber"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.billtonumber).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="CreditLimit"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.creditLimit).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="CreditExposure"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.creditExposure).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Currency"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.currency).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.fvar).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar2"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.fvar2).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar3"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.fvar3).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar4"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.fvar4).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar5"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.fvar5).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar6"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.fvar6).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar7"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.fvar7).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar8"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.fvar8).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar9"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.fvar9).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar10"
+            app:valueText="@{customerVisitPlan.getOptionalValue(CustomerVisitPlan.fvar10).toString()}" />
+
+        <RelativeLayout
+            style="@style/FioriButton.Flat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:onClick="@{handler::onNavigationClickedToOpenBillingSet_OpenBillingSet}"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/link_label_to_openbillingset"
+                style="@style/FioriButton.Flat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:clickable="false"
+                android:focusable="false"
+                android:paddingLeft="16dp"
+                android:text="OpenBillingSet" />
+
+            <Button
+                android:id="@+id/link_button_to_openbillingset"
+                style="@style/FioriButton.Flat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:clickable="false"
+                android:drawableStart="@drawable/ic_arrow_forward_black_24dp"
+                android:enabled="true"
+                android:visibility="invisible"
+                android:focusable="false" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

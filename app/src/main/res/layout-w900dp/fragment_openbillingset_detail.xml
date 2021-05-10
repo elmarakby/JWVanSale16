@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".mdui.openbillingset.OpenBillingSetActivity">
+    <data>
+        <import type = "com.sap.cloud.android.odata.zgw_vansale_srv_entities.OpenBilling" />
+        <variable name="openBilling" type="OpenBilling"/>
+        <variable name="handler" type="com.labs.jwvansale16.mdui.openbillingset.OpenBillingSetDetailFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Userid"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.userid).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Driverid"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.driverid).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Customerno"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.customerno).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Billno"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.billno).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Billingdate"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.billingdate).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Netvalue"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.netvalue).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Currency"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.currency).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.fvar).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar2"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.fvar2).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar3"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.fvar3).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar4"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.fvar4).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar5"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.fvar5).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar6"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.fvar6).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar7"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.fvar7).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar8"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.fvar8).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar9"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.fvar9).toString()}" />
+
+        <com.sap.cloud.mobile.fiori.misc.KeyValueCell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:keyText="Fvar10"
+            app:valueText="@{openBilling.getOptionalValue(OpenBilling.fvar10).toString()}" />
+
+    </LinearLayout>
+</layout>

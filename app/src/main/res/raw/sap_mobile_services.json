@@ -1,0 +1,9 @@
+{
+  "__comment": "When modifying this file, you need to reset or reinstall all current client installations",
+  "auth": [{
+        "type": "basic.default",
+        "requireOtp": false
+  }],
+  "ServiceUrl" : "https://mobile-akix46vmov.sa1.hana.ondemand.com/",
+  "appID": "com.labs.jwvansale16"
+}

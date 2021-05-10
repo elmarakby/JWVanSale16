@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorWhite"
+            app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/initializing_offline_store_failed"
+            app:titleTextColor="@color/colorBlack" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/offline_network_error_label"
+        style="@style/FioriTextStyle.H6"
+        android:theme="@style/Onboarding.Default.Light.Theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="@string/initializing_offline_store_network_error"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.4155" />
+
+    <TextView
+        android:id="@+id/offline_network_error_details"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        style="@style/FioriTextStyle.Body2"
+        android:theme="@style/Onboarding.Default.Light.Theme"
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/initializing_offline_store_network_error_description"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/offline_network_error_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/offline_network_error_button"
+        android:layout_width="109dp"
+        android:layout_height="36dp"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="40dp"
+        android:theme="@style/Onboarding.Default.Light.Theme"
+        android:text="@string/initializing_offline_store_no_internet_button"
+        android:textColor="@color/colorWhite"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/offline_network_error_details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

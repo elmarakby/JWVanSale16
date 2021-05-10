@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/row_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:drawable/list_selector_background"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="left"
+    android:orientation="vertical"
+    android:padding="5dp" >
+    <TextView
+        android:id="@+id/material_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="materials_desc"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/material_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="material_no"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/activ_item" />
+
+    <TextView
+        android:id="@+id/van_stock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="van_stock"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/red" />
+
+
+    <LinearLayout
+        android:id="@+id/edit_qty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_weight="0"
+        android:gravity="left"
+        android:orientation="horizontal">
+
+        <!--        <Button-->
+        <!--            android:id="@+id/increment"-->
+        <!--            android:layout_width="30dp"-->
+        <!--            android:layout_height="30dp"-->
+        <!--            android:background="@mipmap/ic_launcher_background"-->
+        <!--            android:text="+"-->
+        <!--            android:textColor="@color/attachment_clear_color"-->
+        <!--            android:textStyle="bold" />-->
+
+        <EditText
+            android:id="@+id/qty"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:text="Free QTY"
+            android:layout_weight="1"
+            ></TextView>
+        <TextView
+            android:id="@+id/uom"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+
+<!--        <Button-->
+<!--            android:id="@+id/decrement"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:background="@mipmap/ic_launcher_background"-->
+<!--            android:text="-"-->
+<!--            android:textColor="@color/onboarding_red_200"-->
+<!--            android:textStyle="bold" />-->
+
+    </LinearLayout>
+
+</LinearLayout>

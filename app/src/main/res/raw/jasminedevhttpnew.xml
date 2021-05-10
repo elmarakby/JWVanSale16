@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGW_VANSALE_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="TotalMaterial" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Driver"/>
+                    <PropertyRef Name="Material"/>
+                </Key>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Userid" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Driver" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Driver" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Materialtext" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ean11" Type="Edm.String" MaxLength="18" sap:unicode="false" sap:label="EAN/UPC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qty" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uom" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Unit Of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar2" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar3" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar4" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar5" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar6" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar7" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar8" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar9" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar10" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="CheckoutMaterial" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Driver"/>
+                    <PropertyRef Name="Customerno"/>
+                    <PropertyRef Name="Type"/>
+                    <PropertyRef Name="Material"/>
+                </Key>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="ME User ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Driver" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Driver" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customerno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Materialtext" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ean11" Type="Edm.String" MaxLength="18" sap:unicode="false" sap:label="EAN/UPC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Batch" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Batch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plant" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qty" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uom" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Unit Of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar2" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar3" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar4" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar5" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar6" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar7" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar8" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar9" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar10" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="VisitOperationsHeader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Visitid"/>
+                    <PropertyRef Name="Exdocument"/>
+                </Key>
+                <Property Name="Visitid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Visit Lists" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Exdocument" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="External Document" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Driverid" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Driver" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customerno" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Documenttype" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Sales Doc. Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Insertiondate" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Insertiontime" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesorg" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Distchannel" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Division" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Division" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Totalprice" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Action" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:label="Action" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar2" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar3" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar4" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar5" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar6" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar7" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar8" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar9" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar10" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="VisitOperationsItemsSet" Relationship="ZGW_VANSALE_SRV.VisitOperationsHeaderToItems" FromRole="FromRole_VisitOperationsHeaderToItems" ToRole="ToRole_VisitOperationsHeaderToItems"/>
+            </EntityType>
+            <EntityType Name="VisitOperationsItems" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Visitid"/>
+                    <PropertyRef Name="Exdocument"/>
+                    <PropertyRef Name="Itemnumber"/>
+                </Key>
+                <Property Name="Visitid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Visit Lists" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Exdocument" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="External Document" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itemnumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Item Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Material" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Batch" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Batch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesoffice" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Sales office" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mainqty" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mainuom" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Unit Of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Freeqty" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Freeuom" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Unit Of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Price" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Discount" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Totalprice" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Fvar" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar2" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar3" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar4" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar5" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar6" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar7" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar8" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar9" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar10" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="CheckInMaterial" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Driverid"/>
+                    <PropertyRef Name="Material"/>
+                    <PropertyRef Name="Insertdate"/>
+                    <PropertyRef Name="Descision"/>
+                </Key>
+                <Property Name="Driverid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Driver" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Insertdate" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Descision" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Descision" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Materialtext" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ean11" Type="Edm.String" MaxLength="18" sap:unicode="false" sap:label="EAN/UPC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Batch" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Batch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plant" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qty" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Delivery Qty" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uom" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Unit Of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesoffice" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Sales office" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesorg" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Distchannel" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Division" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Division" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Action" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:label="Action" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar2" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar3" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar4" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar5" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar6" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar7" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar8" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar9" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar10" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="CancelVisit" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Driverid"/>
+                    <PropertyRef Name="Visitid"/>
+                    <PropertyRef Name="Visititemno"/>
+                    <PropertyRef Name="Customerno"/>
+                </Key>
+                <Property Name="Driverid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Driver" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Visitid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Visit Lists" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Visititemno" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="VL Item Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customerno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Visitdate" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesorg" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Distchannel" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Division" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Division" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Reason" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Reason" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Canceltime" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Canceldate" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Action" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:label="Action" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar2" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar3" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar4" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar5" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar6" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar7" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar8" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar9" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar10" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Prices_A005" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Kappl"/>
+                    <PropertyRef Name="Kschl"/>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Kunnr"/>
+                    <PropertyRef Name="Matnr"/>
+                    <PropertyRef Name="Datbi"/>
+                </Key>
+                <Property Name="Kappl" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Application" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kschl" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Condition type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datbi" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datab" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Knumh" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Cond.Record No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Prices_A904" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Kappl"/>
+                    <PropertyRef Name="Kschl"/>
+                    <PropertyRef Name="Kdgrp"/>
+                    <PropertyRef Name="Matnr"/>
+                    <PropertyRef Name="Kfrst"/>
+                    <PropertyRef Name="Datbi"/>
+                </Key>
+                <Property Name="Kappl" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Application" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kschl" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Condition type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kdgrp" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Customer Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kfrst" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Release status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datbi" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datab" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kbstat" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Proc. Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Knumh" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Cond.Record No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Prices_A905" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Kappl"/>
+                    <PropertyRef Name="Kschl"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Matnr"/>
+                    <PropertyRef Name="Kfrst"/>
+                    <PropertyRef Name="Datbi"/>
+                </Key>
+                <Property Name="Kappl" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Application" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kschl" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Condition type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kfrst" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Release status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datbi" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datab" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kbstat" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Proc. Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Knumh" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Cond.Record No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Prices_A906" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Kappl"/>
+                    <PropertyRef Name="Kschl"/>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Vkbur"/>
+                    <PropertyRef Name="Matnr"/>
+                    <PropertyRef Name="Kfrst"/>
+                    <PropertyRef Name="Datbi"/>
+                </Key>
+                <Property Name="Kappl" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Application" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kschl" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Condition type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vkbur" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales office" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kfrst" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Release status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datbi" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datab" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kbstat" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Proc. Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Knumh" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Cond.Record No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Prices_A908" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Kappl"/>
+                    <PropertyRef Name="Kschl"/>
+                    <PropertyRef Name="Matnr"/>
+                    <PropertyRef Name="Kfrst"/>
+                    <PropertyRef Name="Datbi"/>
+                </Key>
+                <Property Name="Kappl" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Application" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kschl" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Condition type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kfrst" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Release status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datbi" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datab" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kbstat" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Proc. Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Knumh" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Cond.Record No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Prices_Konp" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Knumh"/>
+                </Key>
+                <Property Name="Knumh" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Cond.Record No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kschl" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Condition type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kbetr" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Konwa" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Cond. currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Kpein" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kmein" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Unit of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+            </EntityType>
+            <EntityType Name="OpenBilling" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Driverid"/>
+                    <PropertyRef Name="Customerno"/>
+                    <PropertyRef Name="Billno"/>
+                </Key>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="ME User ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Driverid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Driver" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customerno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Billno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Billing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Billingdate" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Netvalue" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar2" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar3" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar4" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar5" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar6" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar7" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar8" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar9" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar10" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Collections" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Driverid"/>
+                    <PropertyRef Name="Customerno"/>
+                    <PropertyRef Name="Billno"/>
+                    <PropertyRef Name="Externaldocument"/>
+                </Key>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="ME User ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Driverid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Driver" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customerno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Billno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Billing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Externaldocument" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="External Document" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Billingdate" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Netvalue" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Collectionamount" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Collectioncurrency" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Collectiondate" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Collectiontime" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Collectiontype" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar2" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar3" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar4" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar5" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar6" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar7" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar8" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar9" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar10" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Action_CancelVisit" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Action"/>
+                </Key>
+                <Property Name="Action" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Actiontext" Type="Edm.String" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="CancelVisitSet" Relationship="ZGW_VANSALE_SRV.ActionToCancelvisit" FromRole="FromRole_ActionToCancelvisit" ToRole="ToRole_ActionToCancelvisit"/>
+            </EntityType>
+            <EntityType Name="Action_CheckInMaterial" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Action"/>
+                </Key>
+                <Property Name="Action" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Actiontext" Type="Edm.String" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="CheckInMaterialSet" Relationship="ZGW_VANSALE_SRV.ActionToCheckInMaterial" FromRole="FromRole_ActionToCheckInMaterial" ToRole="ToRole_ActionToCheckInMaterial"/>
+            </EntityType>
+            <EntityType Name="Action_VisitOperations" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Action"/>
+                </Key>
+                <Property Name="Action" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Actiontext" Type="Edm.String" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="VisitOperationsHeaderSet" Relationship="ZGW_VANSALE_SRV.ActionToVisitOperations" FromRole="FromRole_ActionToVisitOperations" ToRole="ToRole_ActionToVisitOperations"/>
+            </EntityType>
+            <EntityType Name="DriverDetails" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Driverid"/>
+                </Key>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="ME User ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Driverid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Driver" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Drivername" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Driver Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Supervisorno" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Supervisor Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Supervisorname" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Supervisor Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Supervisorpassword" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="Supervisor Password" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Saleslimit" Type="Edm.String" MaxLength="15" sap:unicode="false" sap:label="Sales Limit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taxregno" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="VAT Reg. No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Visitid" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Visit Lists" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Visitname" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Visitdate" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vehicle" Type="Edm.String" MaxLength="18" sap:unicode="false" sap:label="Vehicle" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Route" Type="Edm.String" MaxLength="6" sap:unicode="false" sap:label="Route" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Routename" Type="Edm.String" MaxLength="25" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Confirmed" Type="Edm.String" MaxLength="6" sap:unicode="false" sap:label="Confirmed" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar2" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar3" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar4" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar5" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar6" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar7" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar8" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar9" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar10" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="VisitDetailsSet" Relationship="ZGW_VANSALE_SRV.DriverToVisitDetails" FromRole="FromRole_DriverToVisitDetails" ToRole="ToRole_DriverToVisitDetails"/>
+                <NavigationProperty Name="CheckoutMaterialSet" Relationship="ZGW_VANSALE_SRV.DriverToCheckoutMaterial" FromRole="FromRole_DriverToCheckoutMaterial" ToRole="ToRole_DriverToCheckoutMaterial"/>
+                <NavigationProperty Name="Customer_VisitPlanSet" Relationship="ZGW_VANSALE_SRV.DriverToCustomer_VisitPlan" FromRole="FromRole_DriverToCustomer_VisitPlan" ToRole="ToRole_DriverToCustomer_VisitPlan"/>
+            </EntityType>
+            <EntityType Name="VisitDetails" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Driverid"/>
+                    <PropertyRef Name="Visitid"/>
+                    <PropertyRef Name="Visititemno"/>
+                    <PropertyRef Name="Customerno"/>
+                </Key>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="ME User ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Driverid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Driver" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Visitid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Visit Lists" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Visititemno" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="VL Item Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customerno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customername" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Countrycode" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Country" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Street" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Street" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="City" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesorg" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Distchannel" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Division" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Division" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customergroup" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Customer Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesoffice" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Sales office" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesofficedesc" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesofficeaddress" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Street" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Billtonumber" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreditLimit" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreditExposure" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Fvar" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar2" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar3" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar4" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar5" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar6" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar7" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar8" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar9" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar10" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Customer_VisitPlan" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Driverid"/>
+                    <PropertyRef Name="Customerno"/>
+                </Key>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="ME User ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Driverid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Driver" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customerno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customername" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Countrycode" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Country" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Street" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Street" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="City" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesorg" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Distchannel" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Division" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Division" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customergroup" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Customer Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesoffice" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Sales office" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesofficedesc" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesofficeaddress" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Street" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Billtonumber" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreditLimit" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreditExposure" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Fvar" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar2" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar3" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar4" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar5" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar6" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar7" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar8" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar9" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar10" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="OpenBillingSet" Relationship="ZGW_VANSALE_SRV.CustomerToOpenBilling" FromRole="FromRole_CustomerToOpenBilling" ToRole="ToRole_CustomerToOpenBilling"/>
+            </EntityType>
+            <EntityType Name="MasterMaterial" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Material"/>
+                </Key>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Materialdesc" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uom" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Unit Of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesorg" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Distchannel" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ean11" Type="Edm.String" MaxLength="18" sap:unicode="false" sap:label="EAN/UPC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar2" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar3" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar4" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar5" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar6" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar7" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar8" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar9" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar10" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="FreeMaterial" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Material"/>
+                </Key>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Materialdesc" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uom" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Unit Of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Salesorg" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Distchannel" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Freeqty" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Minqty" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ean11" Type="Edm.String" MaxLength="18" sap:unicode="false" sap:label="EAN/UPC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar2" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar3" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar4" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar5" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar6" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar7" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar8" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar9" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fvar10" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Future Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="ActionToCheckInMaterial" sap:content-version="1">
+                <End Type="ZGW_VANSALE_SRV.Action_CheckInMaterial" Multiplicity="1" Role="FromRole_ActionToCheckInMaterial"/>
+                <End Type="ZGW_VANSALE_SRV.CheckInMaterial" Multiplicity="*" Role="ToRole_ActionToCheckInMaterial"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ActionToCheckInMaterial">
+                        <PropertyRef Name="Action"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ActionToCheckInMaterial">
+                        <PropertyRef Name="Action"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ActionToCancelvisit" sap:content-version="1">
+                <End Type="ZGW_VANSALE_SRV.Action_CancelVisit" Multiplicity="1" Role="FromRole_ActionToCancelvisit"/>
+                <End Type="ZGW_VANSALE_SRV.CancelVisit" Multiplicity="*" Role="ToRole_ActionToCancelvisit"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ActionToCancelvisit">
+                        <PropertyRef Name="Action"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ActionToCancelvisit">
+                        <PropertyRef Name="Action"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="VisitOperationsHeaderToItems" sap:content-version="1">
+                <End Type="ZGW_VANSALE_SRV.VisitOperationsHeader" Multiplicity="1" Role="FromRole_VisitOperationsHeaderToItems"/>
+                <End Type="ZGW_VANSALE_SRV.VisitOperationsItems" Multiplicity="*" Role="ToRole_VisitOperationsHeaderToItems"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_VisitOperationsHeaderToItems">
+                        <PropertyRef Name="Visitid"/>
+                        <PropertyRef Name="Exdocument"/>
+                    </Principal>
+                    <Dependent Role="ToRole_VisitOperationsHeaderToItems">
+                        <PropertyRef Name="Visitid"/>
+                        <PropertyRef Name="Exdocument"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DriverToCheckoutMaterial" sap:content-version="1">
+                <End Type="ZGW_VANSALE_SRV.DriverDetails" Multiplicity="1" Role="FromRole_DriverToCheckoutMaterial"/>
+                <End Type="ZGW_VANSALE_SRV.CheckoutMaterial" Multiplicity="*" Role="ToRole_DriverToCheckoutMaterial"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_DriverToCheckoutMaterial">
+                        <PropertyRef Name="Userid"/>
+                        <PropertyRef Name="Driverid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_DriverToCheckoutMaterial">
+                        <PropertyRef Name="Userid"/>
+                        <PropertyRef Name="Driver"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DriverToCustomer_VisitPlan" sap:content-version="1">
+                <End Type="ZGW_VANSALE_SRV.DriverDetails" Multiplicity="1" Role="FromRole_DriverToCustomer_VisitPlan"/>
+                <End Type="ZGW_VANSALE_SRV.Customer_VisitPlan" Multiplicity="*" Role="ToRole_DriverToCustomer_VisitPlan"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_DriverToCustomer_VisitPlan">
+                        <PropertyRef Name="Userid"/>
+                        <PropertyRef Name="Driverid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_DriverToCustomer_VisitPlan">
+                        <PropertyRef Name="Userid"/>
+                        <PropertyRef Name="Driverid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DriverToVisitDetails" sap:content-version="1">
+                <End Type="ZGW_VANSALE_SRV.DriverDetails" Multiplicity="1" Role="FromRole_DriverToVisitDetails"/>
+                <End Type="ZGW_VANSALE_SRV.VisitDetails" Multiplicity="*" Role="ToRole_DriverToVisitDetails"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_DriverToVisitDetails">
+                        <PropertyRef Name="Userid"/>
+                        <PropertyRef Name="Driverid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_DriverToVisitDetails">
+                        <PropertyRef Name="Userid"/>
+                        <PropertyRef Name="Driverid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ActionToVisitOperations" sap:content-version="1">
+                <End Type="ZGW_VANSALE_SRV.Action_VisitOperations" Multiplicity="1" Role="FromRole_ActionToVisitOperations"/>
+                <End Type="ZGW_VANSALE_SRV.VisitOperationsHeader" Multiplicity="*" Role="ToRole_ActionToVisitOperations"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ActionToVisitOperations">
+                        <PropertyRef Name="Action"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ActionToVisitOperations">
+                        <PropertyRef Name="Action"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CustomerToOpenBilling" sap:content-version="1">
+                <End Type="ZGW_VANSALE_SRV.Customer_VisitPlan" Multiplicity="1" Role="FromRole_CustomerToOpenBilling"/>
+                <End Type="ZGW_VANSALE_SRV.OpenBilling" Multiplicity="*" Role="ToRole_CustomerToOpenBilling"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_CustomerToOpenBilling">
+                        <PropertyRef Name="Customerno"/>
+                        <PropertyRef Name="Driverid"/>
+                        <PropertyRef Name="Userid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_CustomerToOpenBilling">
+                        <PropertyRef Name="Customerno"/>
+                        <PropertyRef Name="Driverid"/>
+                        <PropertyRef Name="Userid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZGW_VANSALE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="TotalMaterialSet" EntityType="ZGW_VANSALE_SRV.TotalMaterial" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="CheckoutMaterialSet" EntityType="ZGW_VANSALE_SRV.CheckoutMaterial" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="VisitOperationsHeaderSet" EntityType="ZGW_VANSALE_SRV.VisitOperationsHeader" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="VisitOperationsItemsSet" EntityType="ZGW_VANSALE_SRV.VisitOperationsItems" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="CheckInMaterialSet" EntityType="ZGW_VANSALE_SRV.CheckInMaterial" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="CancelVisitSet" EntityType="ZGW_VANSALE_SRV.CancelVisit" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Prices_A005Set" EntityType="ZGW_VANSALE_SRV.Prices_A005" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Prices_A904Set" EntityType="ZGW_VANSALE_SRV.Prices_A904" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Prices_A905Set" EntityType="ZGW_VANSALE_SRV.Prices_A905" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Prices_A906Set" EntityType="ZGW_VANSALE_SRV.Prices_A906" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Prices_A908Set" EntityType="ZGW_VANSALE_SRV.Prices_A908" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Prices_KonpSet" EntityType="ZGW_VANSALE_SRV.Prices_Konp" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="OpenBillingSet" EntityType="ZGW_VANSALE_SRV.OpenBilling" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="CollectionsSet" EntityType="ZGW_VANSALE_SRV.Collections" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Action_CancelVisitSet" EntityType="ZGW_VANSALE_SRV.Action_CancelVisit" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Action_CheckInMaterialSet" EntityType="ZGW_VANSALE_SRV.Action_CheckInMaterial" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Action_VisitOperationsSet" EntityType="ZGW_VANSALE_SRV.Action_VisitOperations" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="DriverDetailsSet" EntityType="ZGW_VANSALE_SRV.DriverDetails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="VisitDetailsSet" EntityType="ZGW_VANSALE_SRV.VisitDetails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Customer_VisitPlanSet" EntityType="ZGW_VANSALE_SRV.Customer_VisitPlan" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MasterMaterialSet" EntityType="ZGW_VANSALE_SRV.MasterMaterial" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FreeMaterialSet" EntityType="ZGW_VANSALE_SRV.FreeMaterial" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="DriverToCheckoutMaterialSet" Association="ZGW_VANSALE_SRV.DriverToCheckoutMaterial" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="DriverDetailsSet" Role="FromRole_DriverToCheckoutMaterial"/>
+                    <End EntitySet="CheckoutMaterialSet" Role="ToRole_DriverToCheckoutMaterial"/>
+                </AssociationSet>
+                <AssociationSet Name="VisitOperationsHeaderToItemsSet" Association="ZGW_VANSALE_SRV.VisitOperationsHeaderToItems" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="VisitOperationsHeaderSet" Role="FromRole_VisitOperationsHeaderToItems"/>
+                    <End EntitySet="VisitOperationsItemsSet" Role="ToRole_VisitOperationsHeaderToItems"/>
+                </AssociationSet>
+                <AssociationSet Name="ActionToCancelvisitSet" Association="ZGW_VANSALE_SRV.ActionToCancelvisit" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Action_CancelVisitSet" Role="FromRole_ActionToCancelvisit"/>
+                    <End EntitySet="CancelVisitSet" Role="ToRole_ActionToCancelvisit"/>
+                </AssociationSet>
+                <AssociationSet Name="CustomerToOpenBillingSet" Association="ZGW_VANSALE_SRV.CustomerToOpenBilling" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Customer_VisitPlanSet" Role="FromRole_CustomerToOpenBilling"/>
+                    <End EntitySet="OpenBillingSet" Role="ToRole_CustomerToOpenBilling"/>
+                </AssociationSet>
+                <AssociationSet Name="ActionToVisitOperationsSet" Association="ZGW_VANSALE_SRV.ActionToVisitOperations" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Action_VisitOperationsSet" Role="FromRole_ActionToVisitOperations"/>
+                    <End EntitySet="VisitOperationsHeaderSet" Role="ToRole_ActionToVisitOperations"/>
+                </AssociationSet>
+                <AssociationSet Name="DriverToVisitDetailsSet" Association="ZGW_VANSALE_SRV.DriverToVisitDetails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="DriverDetailsSet" Role="FromRole_DriverToVisitDetails"/>
+                    <End EntitySet="VisitDetailsSet" Role="ToRole_DriverToVisitDetails"/>
+                </AssociationSet>
+                <AssociationSet Name="ActionToCheckInMaterialSet" Association="ZGW_VANSALE_SRV.ActionToCheckInMaterial" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Action_CheckInMaterialSet" Role="FromRole_ActionToCheckInMaterial"/>
+                    <End EntitySet="CheckInMaterialSet" Role="ToRole_ActionToCheckInMaterial"/>
+                </AssociationSet>
+                <AssociationSet Name="DriverToCustomer_VisitPlanSet" Association="ZGW_VANSALE_SRV.DriverToCustomer_VisitPlan" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="DriverDetailsSet" Role="FromRole_DriverToCustomer_VisitPlan"/>
+                    <End EntitySet="Customer_VisitPlanSet" Role="ToRole_DriverToCustomer_VisitPlan"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="https://mobile-akix46vmov.sa1.hana.ondemand.com/JasmineDevHttpNew/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://mobile-akix46vmov.sa1.hana.ondemand.com/JasmineDevHttpNew/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

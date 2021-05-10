@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.labs.jwvansale16">
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application
+        android:name=".app.SAPWizardApplication"
+        android:icon="@mipmap/jw_logo_foreground"
+        android:label="Van Sale 16"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+		<activity
+			android:name=".app.WelcomeActivity"
+			android:theme="@style/splashScreenTheme">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity
+            android:name=".app.MainBusinessActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+		<activity
+			android:name=".mdui.EntitySetListActivity"
+			android:launchMode="singleTop"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:theme="@style/AppTheme.NoActionBar">
+		</activity>
+
+		<activity
+				android:name=".mdui.actioncancelvisitset.ActionCancelVisitSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.actioncheckinmaterialset.ActionCheckInMaterialSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.actionvisitoperationsset.ActionVisitOperationsSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.cancelvisitset.CancelVisitSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.checkinmaterialset.CheckInMaterialSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.checkoutmaterialset.CheckoutMaterialSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.collectionsset.CollectionsSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.customervisitplanset.CustomerVisitPlanSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.driverdetailsset.DriverDetailsSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.freematerialset.FreeMaterialSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.mastermaterialset.MasterMaterialSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.openbillingset.OpenBillingSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.pricesa005set.PricesA005SetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.pricesa904set.PricesA904SetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.pricesa905set.PricesA905SetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.pricesa906set.PricesA906SetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.pricesa908set.PricesA908SetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.priceskonpset.PricesKonpSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.totalmaterialset.TotalMaterialSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.visitdetailsset.VisitDetailsSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.visitoperationsheaderset.VisitOperationsHeaderSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+		<activity
+				android:name=".mdui.visitoperationsitemsset.VisitOperationsItemsSetActivity"
+				android:configChanges="keyboardHidden|orientation|screenSize"
+				android:label="@string/application_name"
+				android:launchMode="singleTop"
+				android:parentActivityName=".mdui.EntitySetListActivity"
+				android:theme="@style/AppTheme.NoActionBar" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value=".mdui.EntitySetListActivity" />
+		</activity>
+
+        <activity
+			android:name=".mdui.SettingsActivity"
+			android:parentActivityName=".mdui.EntitySetListActivity"
+			android:launchMode="singleTop"
+			android:label="@string/settings_activity_name"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:screenOrientation="sensor"
+		    android:theme="@style/AppTheme.NoActionBar" >
+		</activity>
+
+
+        <activity
+            android:name="com.sap.cloud.mobile.foundation.authentication.OtpResponseActivity"
+            tools:node="replace">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="com.labs.jwvansale16.xcallbackurl" />
+            </intent-filter>
+        </activity>
+
+		<activity
+			android:name=".mdui.JasmineSplashActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:launchMode="singleTop"
+			android:theme="@style/AppTheme.NoActionBar" >
+		</activity>
+
+		<activity
+			android:name=".mdui.JasmineMainActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:launchMode="singleTop"
+			android:theme="@style/AppTheme.NoActionBar" >
+		</activity>
+
+		<activity
+			android:name=".mdui.JasmineMasterDataActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:launchMode="singleTop"
+			android:theme="@style/AppTheme.NoActionBar" >
+		</activity>
+		<activity
+			android:name=".mdui.JasmineCreateCreditOrderActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:launchMode="singleTop"
+			android:theme="@style/AppTheme.NoActionBar" >
+		</activity>
+		<activity
+			android:name=".mdui.JasmineCreateCashOrderActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:launchMode="singleTop"
+			android:theme="@style/AppTheme.NoActionBar" >
+		</activity>
+		<activity
+			android:name=".mdui.JasmineCreatePreSoldOrderActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:launchMode="singleTop"
+			android:theme="@style/AppTheme.NoActionBar" >
+		</activity>
+		<activity
+			android:name=".mdui.JasmineCreateReturnOrderActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:launchMode="singleTop"
+			android:theme="@style/AppTheme.NoActionBar" >
+		</activity>
+		<activity
+			android:name=".mdui.JasmineCreateCollectionActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:launchMode="singleTop"
+			android:theme="@style/AppTheme.NoActionBar" >
+		</activity>
+
+	</application>
+</manifest>
